@@ -17,6 +17,7 @@
 package cl.ucn.disc.dsm.alccthenews.services;
 
 import cl.ucn.disc.dsm.alccthenews.model.Noticia;
+import cl.ucn.disc.dsm.alccthenews.services.NewsApi.NewsApiNoticiaService;
 import cl.ucn.disc.dsm.alccthenews.services.mockup.MockupNoticiaService;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
@@ -24,6 +25,9 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Alvaro Lucas Castillo Calabacero
+ */
 public class NoticiaServiceTest {
   /**
    * The Logger.
@@ -53,4 +57,32 @@ public class NoticiaServiceTest {
 
     log.debug("Done.");
   }
+  /**
+   * Test {@link NoticiaService#getNoticias(int)} with NewsAPI.org
+   */
+  @Test
+  public void testGetNoticiasNewsApi() {
+
+    final int size = 20;
+
+    log.debug("Testing the NewsApiNoticiaService, requesting {} News.", size);
+
+    // The noticia service
+    final NoticiaService noticiaService = new NewsApiNoticiaService();
+
+    // The List of Noticia.
+    final List<Noticia> noticias = noticiaService.getNoticias(size);
+
+    Assertions.assertNotNull(noticias);
+    Assertions.assertEquals(noticias.size(), size, "Error de tamanio");
+
+    for (final Noticia noticia : noticias) {
+      log.debug("Noticia: {}.", noticia);
+    }
+
+    log.debug("Done.");
+
+  }
 }
+
+
