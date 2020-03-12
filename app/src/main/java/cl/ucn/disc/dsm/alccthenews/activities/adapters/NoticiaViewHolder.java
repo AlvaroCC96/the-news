@@ -19,6 +19,7 @@ package cl.ucn.disc.dsm.alccthenews.activities.adapters;
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
+import cl.ucn.disc.dsm.alccthenews.R;
 import cl.ucn.disc.dsm.alccthenews.databinding.RowNoticiaBinding;
 import cl.ucn.disc.dsm.alccthenews.model.Noticia;
 import java.util.Date;
@@ -67,7 +68,14 @@ public class NoticiaViewHolder extends RecyclerView.ViewHolder {
     final Date date = DateTimeUtils.toDate(noticia.getFecha().toInstant());
     this.binding.tvFecha.setText(PRETTY_TIME.format(date));
 
-
+    // If exist the url ..
+    if (noticia.getUrlFoto() != null) {
+      // .. set the uri
+      this.binding.sdvFoto.setImageURI(noticia.getUrlFoto());
+    } else {
+      // .. set a default image
+      this.binding.sdvFoto.setImageResource(R.drawable.ic_launcher_background);
+    }
 
   }
 }

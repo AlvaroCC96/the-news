@@ -18,6 +18,7 @@ package cl.ucn.disc.dsm.alccthenews;
 
 import android.app.Application;
 import androidx.appcompat.app.AppCompatDelegate;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +42,10 @@ public class MainApplication extends Application {
 
     // Day and Night support
     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
+    // Facebook fresco
+    Fresco.initialize(this);
+
     log.debug("Initializing: Done.");
   }
 }

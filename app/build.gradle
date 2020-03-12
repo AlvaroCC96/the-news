@@ -21,6 +21,9 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    // Version de NDK a utilizar
+    ndkVersion "21.0.6011959-rc2"
+
     defaultConfig {
         // The package-name (MUST be the same of AndroidManifest.xml)
         applicationId "cl.ucn.disc.dsm.alccthenews"
@@ -169,4 +172,9 @@ dependencies {
 
     // https://github.com/GrenderG/Toasty
     implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+    // Fresco (Images):
+    def fresco_version = "2.1.0"
+    implementation "com.facebook.fresco:fresco:$fresco_version"
+    implementation "com.facebook.fresco:imagepipeline-okhttp:$fresco_version"
 }
