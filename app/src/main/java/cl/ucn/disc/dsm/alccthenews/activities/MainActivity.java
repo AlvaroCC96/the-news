@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
               this.noticiaAdapter.setNoticias(noticias);
 
               // 3. Show a Toast!
-              Toast.makeText(this, "Done: " + stopWatch, Toast.LENGTH_SHORT).show();
+              Toast.makeText(this, "Feed Updated Successfully", Toast.LENGTH_SHORT).show();
 
             });
 
