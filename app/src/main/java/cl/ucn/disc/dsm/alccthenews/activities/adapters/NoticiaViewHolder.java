@@ -19,7 +19,6 @@ package cl.ucn.disc.dsm.alccthenews.activities.adapters;
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
-import cl.ucn.disc.dsm.alccthenews.R;
 import cl.ucn.disc.dsm.alccthenews.databinding.RowNoticiaBinding;
 import cl.ucn.disc.dsm.alccthenews.model.Noticia;
 import java.util.Date;
@@ -74,8 +73,10 @@ public class NoticiaViewHolder extends RecyclerView.ViewHolder {
       this.binding.sdvFoto.setImageURI(noticia.getUrlFoto());
     } else {
       // .. set a default image
-      this.binding.sdvFoto.setImageResource(R.drawable.ic_launcher_background);
+      this.binding.sdvFoto.setImageURI(
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png");
     }
+
 
   }
 }
