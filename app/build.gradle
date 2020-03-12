@@ -140,6 +140,7 @@ dependencies {
     // SwipeRefreshLayout https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-beta01"
 
+    //threeten
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
     testImplementation 'org.threeten:threetenbp:1.4.1'
 
@@ -165,4 +166,7 @@ dependencies {
 
     // Prettytime
     implementation "org.ocpsoft.prettytime:prettytime:4.0.2.Final"
+
+    // https://github.com/GrenderG/Toasty
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
 }
