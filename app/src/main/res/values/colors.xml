@@ -17,6 +17,8 @@
 
 <resources>
 
+  <color name="dimmed">#E9000000</color>
+
   <color name="colorAccent">@color/green600</color>
   <color name="lineDivider">@color/green800</color>
 
@@ -35,6 +37,5 @@
   <color name="toolbarTitleTextColor">@color/green0</color>
   <color name="toolbarSubtitleTextColor">@color/green50</color>
 
-  <color name="dimmed">#E9000000</color>
 
 </resources>

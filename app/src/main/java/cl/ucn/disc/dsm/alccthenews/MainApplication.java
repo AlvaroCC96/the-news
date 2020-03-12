@@ -24,6 +24,8 @@ import android.os.StrictMode.VmPolicy;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
+import com.facebook.imagepipeline.decoder.SimpleProgressiveJpegConfig;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,6 +57,16 @@ public class MainApplication extends Application {
 
     // Facebook fresco
     Fresco.initialize(this);
+
+    // Fresco configuration for large images
+    ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this)
+        .setProgressiveJpegConfig(new SimpleProgressiveJpegConfig())
+        .setResizeAndRotateEnabledForNetwork(true)
+        .setDownsampleEnabled(true)
+        .build();
+
+    // Fresco initialization
+    Fresco.initialize(this, config);
 
     // Enforce strict mode in debug mode
     if (BuildConfig.DEBUG) {

@@ -177,4 +177,7 @@ dependencies {
     def fresco_version = "2.1.0"
     implementation "com.facebook.fresco:fresco:$fresco_version"
     implementation "com.facebook.fresco:imagepipeline-okhttp:$fresco_version"
+
+    // PhotoDraweeView: https://github.com/ongakuer/PhotoDraweeView
+    implementation "me.relex:photodraweeview:2.0.0"
 }
