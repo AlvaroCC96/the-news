@@ -40,7 +40,7 @@ public class MainApplication extends Application {
     super.onCreate();
 
     // Day and Night support
-    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
     log.debug("Initializing: Done.");
   }
 }

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright [2020] [Alvaro Lucas Castillo Calabacero]
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +14,8 @@
   ~ limitations under the License.
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-  <!-- Base application theme. -->
   <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
     <item name="android:windowLightStatusBar">false</item>
     <item name="android:colorPrimary">@color/toolbarBackground</item>
@@ -38,33 +36,4 @@
 
     <item name="android:listDivider">@drawable/line_divider</item>
   </style>
-
-  <style name="TextLarge" parent="TextAppearance.AppCompat.Large">
-    <item name="android:textColor">@color/textColorPrimary</item>
-    <item name="android:textSize">16sp</item>
-    <item name="android:includeFontPadding">false</item>
-  </style>
-
-  <style name="TextMedium" parent="TextAppearance.AppCompat.Medium">
-    <item name="android:textColor">@color/textColorSecondary</item>
-    <item name="android:textSize">14sp</item>
-    <item name="android:includeFontPadding">false</item>
-  </style>
-
-  <style name="TextSmall" parent="TextAppearance.AppCompat.Small">
-    <item name="android:textColor">@color/textColorTertiary</item>
-    <item name="android:textSize">13sp</item>
-    <item name="android:includeFontPadding">false</item>
-  </style>
-
-  <style name="Toolbar" parent="Theme.AppCompat.DayNight.DarkActionBar">
-    <item name="android:background">@color/toolbarBackground</item>
-    <item name="titleTextColor">@color/toolbarTitleTextColor</item>
-    <item name="subtitleTextColor">@color/toolbarSubtitleTextColor</item>
-    <item name="colorControlNormal">@color/windowBackground</item>
-    <item name="android:colorControlNormal">@color/windowBackground</item>
-    <item name="android:editTextColor">@android:color/white</item>
-    <item name="android:textColorHint">@color/windowBackground</item>
-  </style>
-
 </resources>

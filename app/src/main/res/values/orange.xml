@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright [2020] [Alvaro Lucas Castillo Calabacero]
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+  <color name="orange0">#FFFFFF</color>
+  <color name="orange50">#FBE9E7</color>
+  <color name="orange100">#FFCCBC</color>
+  <color name="orange200">#FFAB91</color>
+  <color name="orange300">#FF8A65</color>
+  <color name="orange400">#FF7043</color>
+  <color name="orange500">#FF5722</color>
+  <color name="orange600">#F4511E</color>
+  <color name="orange700">#E64A19</color>
+  <color name="orange800">#D84315</color>
+  <color name="orange900">#BF360C</color>
+  <color name="orange1000">#9c290A</color>
+  <color name="orange1100">#7A1d08</color>
+  <color name="orange1200">#5C1406</color>
+  <color name="orange1300">#270803</color>
+  <color name="orange1400">#000000</color>
+</resources>
