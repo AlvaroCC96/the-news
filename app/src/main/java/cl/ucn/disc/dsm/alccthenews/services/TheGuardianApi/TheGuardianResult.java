@@ -15,7 +15,9 @@
  */
 
 package cl.ucn.disc.dsm.alccthenews.services.TheGuardianApi;
-
+/**
+ * @author Alvaro Lucas Castillo Calabcero
+ */
 public class TheGuardianResult {
 
   public Response response;

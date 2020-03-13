@@ -28,6 +28,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * @author Alvaro Lucas Castillo Calabcero
+ */
 public class TheGuardianNoticiaService {
 
   private final TheGuardianApi theGuardianApi;

@@ -27,6 +27,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.threeten.bp.ZonedDateTime;
 
+/**
+ * @author Alvaro Lucas Castillo Calabcero
+ */
 public class ResultNoticiaTransformer {
 
   /**
