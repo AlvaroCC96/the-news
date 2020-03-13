@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-package cl.ucn.disc.dsm.alccthenews.services;
+package cl.ucn.disc.dsm.alccthenews.services.TheGuardianApi;
 
-import cl.ucn.disc.dsm.alccthenews.model.Noticia;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Alvaro Lucas Castillo Calabacero
+ * @author Alvaro Lucas Castillo Calabcero
  */
-public interface NoticiaService {
-  /**
-   * Get the Noticias from the backend.
-   *
-   * @param pageSize how many.
-   * @return the {@link List} of {@link Noticia}.
-   */
-  List<Noticia> getNoticias(final int pageSize);
+public class Response {
 
+  public String status;
+  public String userTier;
+  public Integer total;
+  public Integer startIndex;
+  public Integer pageSize;
+  public Integer currentPage;
+  public Integer pages;
+  public String orderBy;
+  public List<Result> results = new ArrayList<Result>();
 }

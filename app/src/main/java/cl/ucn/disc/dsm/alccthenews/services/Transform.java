@@ -33,7 +33,6 @@ import org.slf4j.LoggerFactory;
 import org.threeten.bp.ZonedDateTime;
 import org.threeten.bp.format.DateTimeParseException;
 
-
 /**
  * @author Alvaro Lucas Castillo Calabacero
  */
@@ -149,10 +148,11 @@ public class Transform {
    *
    * @param fecha to parse.
    * @return the fecha.
-   * @throws cl.ucn.disc.dsm.alccthenews.services.NewsApi.NewsApiNoticiaService
-   *          .NewsAPIException en caso de no lograr convertir la fecha.
+   * @throws cl.ucn.disc.dsm.alccthenews.services.NewsApi.NewsApiNoticiaService .NewsAPIException en
+   *                                                                            caso de no lograr
+   *                                                                            convertir la fecha.
    */
-  private static ZonedDateTime parseZonedDateTime(final String fecha) {
+  public static ZonedDateTime parseZonedDateTime(final String fecha) {
 
     // Na' que hacer si la fecha no existe
     if (fecha == null) {

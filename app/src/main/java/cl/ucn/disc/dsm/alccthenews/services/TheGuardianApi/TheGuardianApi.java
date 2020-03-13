@@ -14,21 +14,33 @@
  * limitations under the License.
  */
 
-package cl.ucn.disc.dsm.alccthenews.services;
+package cl.ucn.disc.dsm.alccthenews.services.TheGuardianApi;
 
-import cl.ucn.disc.dsm.alccthenews.model.Noticia;
-import java.util.List;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
- * @author Alvaro Lucas Castillo Calabacero
+ * @author Alvaro Lucas Castillo Calabcero
  */
-public interface NoticiaService {
-  /**
-   * Get the Noticias from the backend.
-   *
-   * @param pageSize how many.
-   * @return the {@link List} of {@link Noticia}.
-   */
-  List<Noticia> getNoticias(final int pageSize);
+public interface TheGuardianApi {
 
+  /**
+   * The URL
+   */
+  String BASE_URL = "http://content.guardianapis.com/";
+
+  /**
+   * The API Key
+   */
+  String API_KEY = "a26c1c35-6caa-4230-9e99-7994c39c0cdc";
+
+  /**
+   * http://content.guardianapis.com/
+   */
+  @GET("search")
+  Call<Response> getContent(
+      @Query("api-key") String API_KEY,
+      @Query("page-size") int page_size,
+      @Query("show-fields") String fields);
 }
