@@ -19,6 +19,7 @@ package cl.ucn.disc.dsm.alccthenews.services;
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.RequiresApi;
 import cl.ucn.disc.dsm.alccthenews.model.Noticia;
+import cl.ucn.disc.dsm.alccthenews.services.GNews.Article2;
 import cl.ucn.disc.dsm.alccthenews.services.NewsApi.Article;
 import cl.ucn.disc.dsm.alccthenews.services.NewsApi.NewsApiNoticiaService;
 import cl.ucn.disc.dsm.alccthenews.services.NewsApi.Source;
@@ -31,6 +32,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.threeten.bp.ZonedDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.format.DateTimeParseException;
 
 /**
@@ -45,9 +47,68 @@ public class Transform {
   /**
    * Article to Noticia.
    *
-   * @param article to transform
+   * @param article2 to transform
    * @return the Noticia.
    */
+  @RequiresApi(api = VERSION_CODES.O)
+  public static Noticia transform2(final Article2 article2) {
+
+    // Nullity
+    if (article2 == null) {
+      throw new NewsApiNoticiaService.NewsAPIException("Article was null");
+    }
+
+    // The host
+    final String host = getHost(article2.url);
+
+    // Si el articulo es null ..
+    if (article2.title == null) {
+
+      log.warn("Article without title: {}", toString(article2));
+
+      // .. y el contenido es null, lanzar exception!
+      if (article2.description == null) {
+        throw new NewsApiNoticiaService.NewsAPIException("Article without title and description");
+      }
+
+      article2.title = "No Title*";
+    }
+
+    // FIXED: En caso de no haber una fuente.
+    if (article2.source == null) {
+      article2.source = new cl.ucn.disc.dsm.alccthenews.services.GNews.Source();
+
+      if (host != null) {
+        article2.source.name = host;
+      } else {
+        article2.source.name = "No Source*";
+        log.warn("Article without source: {}", toString(article2));
+      }
+    }
+
+    // The date.
+    final ZonedDateTime publishedAt = ZonedDateTime
+        .parse(article2.publishedAt, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss z"));
+
+    // The unique id (computed from hash)
+    final Long theId = LongHashFunction.xx()
+        .hashChars(article2.title + article2.source.name);
+
+    // The Noticia.
+    return new Noticia(
+        theId,
+        article2.title,
+        article2.source.name,
+        "GNews",
+        article2.url,
+        article2.image,
+        article2.description,
+        article2.source.url,
+        publishedAt
+    );
+
+  }
+
   @RequiresApi(api = VERSION_CODES.O)
   public static Noticia transform(final Article article) {
 
@@ -118,6 +179,7 @@ public class Transform {
     );
 
   }
+
 
   /**
    * Get the host part of one url.

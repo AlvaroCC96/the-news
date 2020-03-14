@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
    * The NoticiaService
    */
   private NoticiaService noticiaService;
+  private NoticiaService noticiaService2;
 
   /**
    * @param savedInstanceState to use.
@@ -91,11 +92,13 @@ public class MainActivity extends AppCompatActivity {
       binding.rvNoticias.setLayoutManager(new LinearLayoutManager(this));
 
       // The separator (line)
-      binding.rvNoticias.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+      binding.rvNoticias
+          .addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     // The NoticiaService
     this.noticiaService = new NewsApiNoticiaService();
+    //this.noticiaService2 = new GNewsApiNoticiaService();
 
     // The refresh
     {
@@ -112,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
 
             // 1. Get the List from NewsApi (in background)
             final List<Noticia> noticias = this.noticiaService.getNoticias(50);
+            //final List<Noticia> noticias2 = this.noticiaService2.getNoticias(10);
+            //noticias.addAll(noticias2);
 
             // (in UI)
             this.runOnUiThread(() -> {
