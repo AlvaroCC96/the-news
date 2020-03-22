@@ -19,7 +19,6 @@ package cl.ucn.disc.dsm.alccthenews.services.GNews;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.Query;
 
 public interface GNewsApi {
@@ -27,17 +26,16 @@ public interface GNewsApi {
   final String BASE_URL = "https://gnews.io/api/v3/";
   final String API_KEY = "0d194e505de173cb271edc62b375c329";
 
-  @Headers({"X-Api-Key: " + API_KEY})
-  @GET("top-news?token=" + API_KEY)
-  Call<GNewsApiResult> getTopHeadlines(
-      @Query("lang") final String lang, @Query("max") final int max);
 
   /**
    * @return the call of {@link GNewsApiResult}.
    */
-  @Headers({"X-Api-Key: " + API_KEY})
-  @GET("everything?sources=ars-technica,wired,hacker-news,recode")
+  //@Headers({"X-Api-Key: " + API_KEY})
+  @GET("search?q=coronavirus&country=cl&&token=" + API_KEY)
   Call<GNewsApiResult> getEverything(@Query("pageSize") final int pageSize);
 
+  @GET("search?q=coronavirus&country=cl&&token=" + API_KEY)
+  Call<GNewsApiResult> getTopHeadlines(
+      @Query("lang") final String lang, @Query("max") final int max);
 }
 

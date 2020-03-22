@@ -17,6 +17,7 @@
 package cl.ucn.disc.dsm.alccthenews.services;
 
 import cl.ucn.disc.dsm.alccthenews.model.Noticia;
+import cl.ucn.disc.dsm.alccthenews.services.GNews.GNewsApiNoticiaService;
 import cl.ucn.disc.dsm.alccthenews.services.NewsApi.NewsApiNoticiaService;
 import cl.ucn.disc.dsm.alccthenews.services.mockup.MockupNoticiaService;
 import java.util.List;
@@ -69,6 +70,33 @@ public class NoticiaServiceTest {
 
     // The noticia service
     final NoticiaService noticiaService = new NewsApiNoticiaService();
+
+    // The List of Noticia.
+    final List<Noticia> noticias = noticiaService.getNoticias(size);
+
+    Assertions.assertNotNull(noticias);
+    Assertions.assertEquals(noticias.size(), size, "Error de tamanio");
+
+    for (final Noticia noticia : noticias) {
+      log.debug("Noticia: {}.", noticia);
+    }
+
+    log.debug("Done.");
+
+  }
+
+  /**
+   * Test {@link NoticiaService#getNoticias(int)} with https://gnews.io/
+   */
+  @Test
+  public void testGetNoticiasGNewsApi() {
+
+    final int size = 10;
+
+    log.debug("Testing the GNewsApiNoticiaService, requesting {} News.", size);
+
+    // The noticia service
+    final NoticiaService noticiaService = new GNewsApiNoticiaService();
 
     // The List of Noticia.
     final List<Noticia> noticias = noticiaService.getNoticias(size);

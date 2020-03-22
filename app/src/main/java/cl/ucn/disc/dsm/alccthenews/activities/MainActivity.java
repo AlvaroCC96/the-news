@@ -25,8 +25,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import cl.ucn.disc.dsm.alccthenews.activities.adapters.NoticiaAdapter;
 import cl.ucn.disc.dsm.alccthenews.databinding.ActivityMainBinding;
 import cl.ucn.disc.dsm.alccthenews.model.Noticia;
+import cl.ucn.disc.dsm.alccthenews.services.GNews.GNewsApiNoticiaService;
 import cl.ucn.disc.dsm.alccthenews.services.NewsApi.NewsApiNoticiaService;
 import cl.ucn.disc.dsm.alccthenews.services.NoticiaService;
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     // The NoticiaService
     this.noticiaService = new NewsApiNoticiaService();
-    //this.noticiaService2 = new GNewsApiNoticiaService();
+    this.noticiaService2 = new GNewsApiNoticiaService();
 
     // The refresh
     {
@@ -115,14 +117,33 @@ public class MainActivity extends AppCompatActivity {
 
             // 1. Get the List from NewsApi (in background)
             final List<Noticia> noticias = this.noticiaService.getNoticias(50);
-            //final List<Noticia> noticias2 = this.noticiaService2.getNoticias(10);
+
+            // this is a list from GNews,
+            //the service provides 10 news per query only
+            final List<Noticia> noticias2 = this.noticiaService2.getNoticias(10);
             //noticias.addAll(noticias2);
+
+            final List<Noticia> noticiasArray = new ArrayList<Noticia>();
+
+            /*
+            mix of news lists
+             */
+            for (int i = 0; i < 10; i++) {
+              noticiasArray.add(noticias.get(i));
+              noticiasArray.add(noticias2.get(i));
+            }
+            /*
+            add the rest of the news
+             */
+            for (int i = 10; i < 50; i++) {
+              noticiasArray.add(noticias.get(i));
+            }
 
             // (in UI)
             this.runOnUiThread(() -> {
 
               // 2. Set in the adapter (
-              this.noticiaAdapter.setNoticias(noticias);
+              this.noticiaAdapter.setNoticias(noticiasArray);
 
               // 3. Show a Toast!
               Toast.makeText(this, "Feed Updated Successfully", Toast.LENGTH_SHORT).show();
