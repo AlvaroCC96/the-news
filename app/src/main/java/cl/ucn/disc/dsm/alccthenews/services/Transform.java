@@ -20,6 +20,7 @@ import android.os.Build.VERSION_CODES;
 import androidx.annotation.RequiresApi;
 import cl.ucn.disc.dsm.alccthenews.model.Noticia;
 import cl.ucn.disc.dsm.alccthenews.services.GNews.Article2;
+import cl.ucn.disc.dsm.alccthenews.services.GNews.GNewsApiNoticiaService;
 import cl.ucn.disc.dsm.alccthenews.services.NewsApi.Article;
 import cl.ucn.disc.dsm.alccthenews.services.NewsApi.NewsApiNoticiaService;
 import cl.ucn.disc.dsm.alccthenews.services.NewsApi.Source;
@@ -55,7 +56,7 @@ public class Transform {
 
     // Nullity
     if (article2 == null) {
-      throw new NewsApiNoticiaService.NewsAPIException("Article was null");
+      throw new GNewsApiNoticiaService.GNewsAPIException("Article was null");
     }
 
     // The host
@@ -68,7 +69,7 @@ public class Transform {
 
       // .. y el contenido es null, lanzar exception!
       if (article2.description == null) {
-        throw new NewsApiNoticiaService.NewsAPIException("Article without title and description");
+        throw new GNewsApiNoticiaService.GNewsAPIException("Article without title and description");
       }
 
       article2.title = "No Title*";
