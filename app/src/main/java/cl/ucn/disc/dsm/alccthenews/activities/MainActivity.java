@@ -17,8 +17,10 @@
 package cl.ucn.disc.dsm.alccthenews.activities;
 
 import android.os.AsyncTask;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.widget.Toast;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
   /**
    * @param savedInstanceState to use.
    */
+  @RequiresApi(api = VERSION_CODES.O)
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -129,8 +132,13 @@ public class MainActivity extends AppCompatActivity {
             mix of news lists
              */
             for (int i = 0; i < 10; i++) {
-              noticiasArray.add(noticias.get(i));
-              noticiasArray.add(noticias2.get(i));
+              if (noticias.get(i).getFecha().isAfter(noticias2.get(i).getFecha())) {
+                noticiasArray.add(noticias2.get(i));
+                noticiasArray.add(noticias.get(i));
+              } else {
+                noticiasArray.add(noticias.get(i));
+                noticiasArray.add(noticias2.get(i));
+              }
             }
             /*
             add the rest of the news
