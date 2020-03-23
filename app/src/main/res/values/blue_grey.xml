@@ -14,20 +14,18 @@
   ~ limitations under the License.
   -->
 <resources>
-  <color name="orange0">#FFFFFF</color>
-  <color name="orange50">#FBE9E7</color>
-  <color name="orange100">#FFCCBC</color>
-  <color name="orange200">#FFAB91</color>
-  <color name="orange300">#FF8A65</color>
-  <color name="orange400">#FF7043</color>
-  <color name="orange500">#FF5722</color>
-  <color name="orange600">#F4511E</color>
-  <color name="orange700">#E64A19</color>
-  <color name="orange800">#D84315</color>
-  <color name="orange900">#BF360C</color>
-  <color name="orange1000">#9c290A</color>
-  <color name="orange1100">#7A1d08</color>
-  <color name="orange1200">#5C1406</color>
-  <color name="orange1300">#270803</color>
-  <color name="orange1400">#000000</color>
+  <color name="md_blue_grey_0">#FFFFFF</color>
+  <color name="md_blue_grey_50">#eceff1</color>
+  <color name="md_blue_grey_100">#cfd8dc</color>
+  <color name="md_blue_grey_200">#b0bec5</color>
+  <color name="md_blue_grey_300">#90a4ae</color>
+  <color name="md_blue_grey_400">#78909c</color>
+  <color name="md_blue_grey_500">#607d8b</color>
+  <color name="md_blue_grey_600">#546e7a</color>
+  <color name="md_blue_grey_700">#455a64</color>
+  <color name="md_blue_grey_800">#37474f</color>
+  <color name="md_blue_grey_900">#263238</color>
+  <color name="md_blue_grey_500_25">#40607d8b</color>
+  <color name="md_blue_grey_500_50">#80607d8b</color>
+  <color name="md_blue_grey_500_75">#c0607d8b</color>
 </resources>

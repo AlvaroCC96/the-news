@@ -14,23 +14,23 @@
   ~ limitations under the License.
   -->
 <resources>
-
-  <color name="colorAccent">@color/orange600</color>
+  <color name="lineDivider">@color/md_blue_grey_0</color>
+  <color name="colorAccent">@color/md_blue_grey_600</color>
 
   <!-- Text -->
-  <color name="textColorPrimary">@color/orange100</color>
-  <color name="textColorSecondary">@color/orange200</color>
-  <color name="textColorTertiary">@color/orange300</color>
+  <color name="textColorPrimary">@color/md_blue_grey_100</color>
+  <color name="textColorSecondary">@color/md_blue_grey_200</color>
+  <color name="textColorTertiary">@color/md_blue_grey_300</color>
 
   <!-- Toolbar -->
-  <color name="statusBarColor">@color/orange1000</color>
-  <color name="toolbarBackground">@color/orange900</color>
-  <color name="windowBackground">@color/orange1300</color>
-  <color name="dividerColor">@color/orange400</color>
-  <color name="navigationBarColor">@color/orange1000</color>
+  <color name="statusBarColor">@color/md_blue_grey_900</color>
+  <color name="toolbarBackground">@color/md_blue_grey_900</color>
+  <color name="windowBackground">@color/md_blue_grey_800</color>
+  <color name="dividerColor">@color/md_blue_grey_400</color>
+  <color name="navigationBarColor">@color/md_blue_grey_900</color>
 
-  <color name="toolbarTitleTextColor">@color/orange100</color>
-  <color name="toolbarSubtitleTextColor">@color/orange50</color>
+  <color name="toolbarTitleTextColor">@color/md_blue_grey_100</color>
+  <color name="toolbarSubtitleTextColor">@color/md_blue_grey_50</color>
 
   <color name="dimmed">#E9000000</color>
 
