@@ -23,7 +23,7 @@ import org.threeten.bp.ZonedDateTime;
 
 
 @RequiresApi(api = VERSION_CODES.O)
-public class Noticia {
+public class Noticia implements Comparable {
 
   /**
    * The Zone
@@ -164,4 +164,15 @@ public class Noticia {
     return this.fecha;
   }
 
+  /**
+   * implentation of compareTo for sorting list of news
+   *
+   * @param o
+   * @return number for sort method of Collections
+   */
+  @Override
+  public int compareTo(Object o) {
+    ZonedDateTime time = ((Noticia) o).getFecha();
+    return time.compareTo(this.fecha);
+  }
 }
